@@ -43,3 +43,48 @@ class File:
             self.parent=None
             self.next_sibiling=None
             self.prev_sibiling=None
+
+
+
+
+
+
+
+
+
+#TEST CASES AND 
+#create the root directory
+root=directory('ROOT')
+#creating the sub_dir 
+desktop=directory('DESKTOP')
+video=directory('VIDEOS')
+picture=directory('PICTURES')
+#relating the directories : making the root the parent of all directory
+root.add_dir(desktop)
+root.first_child(desktop)
+root.add_dir(picture)
+root.add_dir(video)  
+#creating files for the purpose of illustration
+f1=File('video1.mp4')    
+f2=File('video2.mp4')   
+f3=File('video3.mp4')
+f4=File('Ayda.mp3')
+f5=File('bereket.mp3')
+f6=File('the power of now.pdf')
+f7=File('Ego is the your enemy .pdf')
+
+
+#Add files to root
+root.add_file(f1)
+root.add_file(f2)
+#add files to the sub directories 
+desktop.add_file(f3)
+desktop.add_file(f4)
+
+memories=directory("MEMORIES")
+picture.add_dir(memories)
+picture.add_file(f5)
+
+
+print(root.display())
+
