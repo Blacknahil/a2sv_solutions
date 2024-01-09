@@ -1,12 +1,14 @@
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        # lets use bubble sort
-        n=len(nums)
-        for i in range(n):
-            for j in range(n-i-1):
-                if nums[j]> nums[j+1]:
-                    nums[j],nums[j+1]=nums[j+1],nums[j]
-        return nums
+        count=[0]*3
+        for i in nums:
+            count[i]+=1
+        pointer=0
+        for i in range(len(count)):
+            while count[i] >0:
+                nums[pointer]=i
+                count[i]-=1
+                pointer+=1
+
+
+       
